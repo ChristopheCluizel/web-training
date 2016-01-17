@@ -28,7 +28,11 @@ jQuery(function($) {
     var date = $("#datepicker").datepicker("getDate");
     var $fromCode = $('#currency_from').val();
     var $toCode = $('#currency_to').val();
-    var dateString = date.getFullYear() + "-" + date.getMonth() + 1 + "-" + date.getDate();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    day = day < 10 ? '0' + day : day;
+    month = month < 10 ? '0' + month : month;
+    var dateString = date.getFullYear() + "-" + month + "-" + day;
     var urlString = 'http://api.fixer.io/' + dateString + '?base=' + $fromCode;
     $.ajax({
       url: urlString,
@@ -36,7 +40,6 @@ jQuery(function($) {
       success: function(json_response, status) {
         var answer = json_response.rates[$toCode];
         $('#answer').replaceWith('<p id="answer">The rate is: ' + answer + '</p>');
-        console.log(answer);
       },
       error : function(response, status, error){
         alert("Failed with status: " + status + '\nError: ' + error)
