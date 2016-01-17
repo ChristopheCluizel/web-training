@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency converter</title>
+  <meta charset="utf-8"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+  <fieldset>
+    <label for="currency_from">Convert </label>
+    <select name="currency_from" id="currency_from">
+      <option value="EUR" selected>EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="USD">USD</option>
+    </select>
+
+    <label for="currency_to"> into </label>
+    <select name="currency_to" id="currency_to">
+    </select>
+
+    <p>Date: <input type="text" id="datepicker"></p>
+
+    <p id="answer"></p>
+
+    <script type="text/javascript" src="index.js"></script>
+
+  </fieldset>
+</body>
+</html>
